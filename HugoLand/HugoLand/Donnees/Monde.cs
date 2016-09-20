@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HugoLand.Data
+namespace HugoLand.Donnees
 {
     using System;
     using System.Collections.Generic;
