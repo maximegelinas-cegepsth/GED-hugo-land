@@ -1,5 +1,8 @@
-﻿using HugoLand.Donnees;
+﻿using System;
+using System.Linq;
+using HugoLand.Donnees;
 using HugoLand.Metier;
+using HugoLand.Presentation;
 
 namespace HugoLand
 {
@@ -8,14 +11,13 @@ namespace HugoLand
         private static void Main(string[] args)
         {
             var contexte = new Entities();
-            var mondeDepot = new MondeEntiteDepot(contexte);
-            var monstreDepot = new MonstreEntiteDepot(contexte);
+            var mondeContexte = new MondeEntiteDepot(contexte);
 
-            var mondes = mondeDepot.ObtenirTous();
+            var mondes = mondeContexte.ObtenirTous();
 
-            monstreDepot.Supprimer(1);
+            Afficheur.AfficherEtat(mondes.First());
 
-            monstreDepot.Sauvegarder();
+            Console.ReadKey();
         }
     }
 

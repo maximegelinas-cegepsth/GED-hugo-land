@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
+using System.Linq;
 using HugoLand.Donnees;
 
 namespace HugoLand.Metier
@@ -9,6 +11,15 @@ namespace HugoLand.Metier
 
         public ObjectMondeEntiteDepot(Entities contexte) : base(contexte)
         {
+        }
+
+        public void ModifierDescription(ObjetMonde objetMonde, string description, Monde monde)
+        {
+            if (monde.ObjetMondes.All(o => o.Id != objetMonde.Id)) throw new ArgumentException();
+
+            objetMonde.Description = description;
+
+            Modifier(objetMonde);
         }
     }
 }

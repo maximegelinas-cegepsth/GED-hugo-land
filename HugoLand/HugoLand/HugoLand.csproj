@@ -54,16 +54,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Donnees\Classe.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Donnees\CompteJoueur.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Donnees\EffetItem.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Donnees\Entites\CompteJoueur.cs" />
+    <Compile Include="Donnees\Entites\Hero.cs" />
+    <Compile Include="Donnees\Entites\Monstre.cs" />
+    <Compile Include="Donnees\Hero.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Donnees\InventaireHero.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Donnees\Item.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Donnees\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Donnees\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Donnees\Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Donnees\Monde.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Donnees\Monstre.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Donnees\ObjetMonde.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Donnees\ReadHero_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Metier\ClasseEntiteDepot.cs" />
+    <Compile Include="Metier\CompteJoueurEntiteDepot.cs" />
+    <Compile Include="Metier\EffetItemEntiteDepot.cs" />
+    <Compile Include="Metier\EntiteDepot.cs" />
+    <Compile Include="Metier\HeroEntiteDepot.cs" />
+    <Compile Include="Metier\IDepot.cs" />
+    <Compile Include="Metier\InventaireHeroEntiteDepot.cs" />
+    <Compile Include="Metier\ItemEntiteDepot.cs" />
+    <Compile Include="Metier\MondeEntiteDepot.cs" />
+    <Compile Include="Metier\MonstreEntiteDepot.cs" />
+    <Compile Include="Metier\ObjetMondeEntiteDepot.cs" />
+    <Compile Include="Presentation\Afficheur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,8 +136,15 @@
     <Content Include="Donnees\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Donnees\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

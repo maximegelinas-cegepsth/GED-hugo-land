@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using HugoLand.Donnees;
 
 namespace HugoLand.Metier
@@ -9,6 +10,11 @@ namespace HugoLand.Metier
 
         public CompteJoueurEntiteDepot(Entities contexte) : base(contexte)
         {
+        }
+
+        public IEnumerable<Hero> ObtenirHeros(CompteJoueur joueur)
+        {
+            return joueur.Heros;
         }
     }
 }

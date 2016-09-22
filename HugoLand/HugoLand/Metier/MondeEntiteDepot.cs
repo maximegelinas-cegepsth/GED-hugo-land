@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
+﻿using System.Data.Entity;
 using HugoLand.Donnees;
 
 namespace HugoLand.Metier
@@ -11,6 +9,15 @@ namespace HugoLand.Metier
 
         public MondeEntiteDepot(Entities contexte) : base(contexte)
         {
+        }
+
+        public void Modifier(Monde monde, int limiteX, int limiteY, string description)
+        {
+            monde.LimiteX = limiteX;
+            monde.LimiteY = limiteY;
+            monde.Description = description;
+
+            Modifier(monde);
         }
     }
 }

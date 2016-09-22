@@ -18,7 +18,7 @@ namespace HugoLand.Metier
 
         public virtual IEnumerable<T> ObtenirTous()
         {
-            return Entites.ToList();
+            return Entites;
         }
 
         public virtual T Ajouter(T entite)
